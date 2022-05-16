@@ -1,5 +1,5 @@
 /** @param {NS} ns */
-export async function main(ns) {
+export async function main(ns: NS): Promise<void> {
     const args = ns.flags([["help", false]]);
     if (args.help) {
         ns.tprint("This script will enhance your HUD (Heads up Display) with custom statistics.");

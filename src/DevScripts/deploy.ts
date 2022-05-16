@@ -1,5 +1,5 @@
 /** @param {NS} ns */
-export async function main(ns) {
+export async function main(ns: NS): Promise<void> {
 	const args = ns.flags([["help", false]]);
 	if (args.help || args._.length < 2) {
 		ns.tprint("This script deploys another script on a server with maximum threads possible.");

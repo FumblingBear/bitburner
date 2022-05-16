@@ -1,6 +1,6 @@
 function scan(ns, parent, server, list) {
     const children = ns.scan(server);
-    for (let child of children) {
+    for (const child of children) {
         if (parent == child) {
             continue;
         }
@@ -10,14 +10,14 @@ function scan(ns, parent, server, list) {
     }
 }
 
-export function list_servers(ns) {
+export function list_servers(ns: NS): Promise<void> {
     const list = [];
     scan(ns, '', 'home', list);
     return list;
 }
 
 /** @param {NS} ns **/
-export async function main(ns) {
+export async function main(ns: NS): Promise<void> {
 	const args = ns.flags([["help", false]]);
     if (args.help) {
         ns.tprint("This script lists all servers on which you can run scripts.");

@@ -1,7 +1,7 @@
 /** @param {NS} ns */
 function recursiveScan(ns, parent, server, target, route) {
     const children = ns.scan(server);
-    for (let child of children) {
+    for (const child of children) {
         if (parent == child) {
             continue;
         }
@@ -19,10 +19,10 @@ function recursiveScan(ns, parent, server, target, route) {
     return false;
 }
 
-export async function main(ns) {
+export async function main(ns: NS): Promise<void> {
     const args = ns.flags([["help", false]]);
-    let route = [];
-    let server = args._[0];
+    const route = [];
+    const server = args._[0];
     if (!server || args.help) {
         ns.tprint("This script helps you find a server on the network and shows you the path to get to it.");
         ns.tprint(`Usage: run ${ns.getScriptName()} SERVER`);

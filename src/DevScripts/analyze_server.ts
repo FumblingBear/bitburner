@@ -1,5 +1,5 @@
 /** @param {NS} ns */
-export async function main(ns) {
+export async function main(ns: NS): Promise<void> {
     const args = ns.flags([["help", false]]);
     const server = ns.args[0];
     if (args.help || !server) {

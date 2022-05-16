@@ -1,5 +1,5 @@
 /** @param {NS} ns */
-export async function main(ns) {
+export async function main(ns: NS): Promise<void> {
     const flags = ns.flags([
         ['refreshrate', 200],
         ['help', false],
